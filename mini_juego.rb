@@ -38,8 +38,13 @@ def green_room
         if choice == 'correr'
             dead('fuiste bueno, te acorralaron')
         elsif choice == "pelear" && !nazi_moved
-            gold_room
+            puts 'Los nazis se movieron, es tu oportunidad'
+            puts "ahora puedes pelear o abrir la puerta"
             nazi_moved = true
+        elsif choice == "pelear" && nazi_moved 
+            dead('te hicieron mierda')
+        elsif choice == "abrir la puerta" && nazi_moved
+            gold_room
         else 
             puts "no sé qué quisiste decir con eso"
         end
